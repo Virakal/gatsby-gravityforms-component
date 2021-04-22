@@ -20,6 +20,9 @@ const InputWrapper = ({
     wrapClassName,
     wrapId,
 }) => {
+    const hideLabelTypes = ['html']
+    const shouldHideLabel = labelPlacement === 'hidden_label' || hideLabelTypes.includes(type)
+
     return (
         <li
             className={classnames(
@@ -29,7 +32,7 @@ const InputWrapper = ({
             )}
             id={wrapId}
         >
-            {labelPlacement !== 'hidden_label' && <label
+            {shouldHideLabel || <label
                 className="gravityform__label gfield_label"
                 htmlFor={labelFor}
             >
