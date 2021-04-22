@@ -4,7 +4,7 @@ import React from 'react'
 import InputWrapper from '../../components/InputWrapper'
 
 const Select = ({ errors, fieldData, name, register, ...wrapProps }) => {
-    const { choices, cssClass, isRequired, size, enableEnhancedUI } = fieldData
+    const { choices, cssClass, enableEnhancedUI, isRequired, size } = fieldData
     const options = JSON.parse(choices)
     return (
         <InputWrapper
@@ -56,6 +56,7 @@ Select.propTypes = {
         cssClass: PropTypes.string,
         isRequired: PropTypes.bool,
         size: PropTypes.string,
+        enableEnhancedUI: PropTypes.number,
     }),
     name: PropTypes.string,
     register: PropTypes.func,
