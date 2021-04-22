@@ -12,6 +12,7 @@ const InputWrapper = ({
         descriptionPlacement,
         isRequired,
         label,
+        labelPlacement,
         maxLength,
         type,
     },
@@ -28,13 +29,13 @@ const InputWrapper = ({
             )}
             id={wrapId}
         >
-            <label
+            {labelPlacement !== 'hidden_label' && <label
                 className="gravityform__label gfield_label"
                 htmlFor={labelFor}
             >
                 {label}
                 {isRequired && <span className="gfield_required">*</span>}
-            </label>
+            </label>}
             {outputDescription(
                 description,
                 descriptionPlacement,
@@ -87,6 +88,7 @@ InputWrapper.propTypes = {
         description: PropTypes.string,
         descriptionPlacement: PropTypes.string,
         label: PropTypes.string,
+        labelPlacement: PropTypes.string,
         isRequired: PropTypes.bool,
         maxLength: PropTypes.number,
         type: PropTypes.string,
