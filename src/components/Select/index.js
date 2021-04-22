@@ -4,7 +4,7 @@ import React from 'react'
 import InputWrapper from '../../components/InputWrapper'
 
 const Select = ({ errors, fieldData, name, register, ...wrapProps }) => {
-    const { choices, cssClass, isRequired, size } = fieldData
+    const { choices, cssClass, isRequired, size, enableEnhancedUI } = fieldData
     const options = JSON.parse(choices)
     return (
         <InputWrapper
@@ -22,7 +22,8 @@ const Select = ({ errors, fieldData, name, register, ...wrapProps }) => {
                     'gravityform__field__input__select',
                     'gfield_select',
                     cssClass,
-                    size
+                    size,
+                    enableEnhancedUI && 'chosen-select',
                 )}
                 id={name}
                 name={name}
