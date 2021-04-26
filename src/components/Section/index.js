@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser'
 import InputWrapper from '../../components/InputWrapper'
 
 const Section = ({ fieldData, name, wrapClassName, ...wrapProps }) => {
-    const { content, cssClass, type } = fieldData
+    const { cssClass, label, type } = fieldData
 
     return (
         <InputWrapper
@@ -22,7 +22,7 @@ const Section = ({ fieldData, name, wrapClassName, ...wrapProps }) => {
                 cssClass
             )}
         >
-            <h2 className="gsection_title">{ReactHtmlParser(content)}</h2>
+            <h2 className="gsection_title">{ReactHtmlParser(label)}</h2>
         </InputWrapper>
     )
 }
@@ -32,7 +32,7 @@ export default Section
 Section.propTypes = {
     fieldData: PropTypes.shape({
         cssClass: PropTypes.string,
-        content: PropTypes.string,
+        label: PropTypes.string,
         type: PropTypes.string,
     }),
     name: PropTypes.string,
