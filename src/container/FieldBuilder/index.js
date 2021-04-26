@@ -156,6 +156,16 @@ const FieldBuilder = ({
                         wrapId={wrapId}
                     />
                 )
+            case 'section':
+                return (
+                    <Section
+                        fieldData={fieldData}
+                        key={field.id}
+                        name={inputName}
+                        wrapClassName={inputWrapperClass}
+                        wrapId={wrapId}
+                    />
+                )
 
             default:
                 return null
