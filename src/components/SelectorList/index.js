@@ -20,7 +20,7 @@ const SelectorList = ({ errors, fieldData, name, register, ...wrapProps }) => {
                 {options.map(({ isSelected, text, value }, index) => {
                     const choiceID = index + 1
                     return (
-                        <li key={`${name}-${index + 1}`}>
+                        <li key={`${name}_${choiceID}`}>
                             <input
                                 className={classnames(
                                     `gravityform__field__input__${type}`,
